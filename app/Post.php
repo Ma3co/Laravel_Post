@@ -5,8 +5,12 @@ namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
+use Thomasjohnkane\Snooze\Traits\SnoozeNotifiable;
+use Illuminate\Notifications\Notifiable;
+
 class Post extends Model
 {
+    use Notifiable, SnoozeNotifiable;
     use Sluggable;
 
     protected $fillable = [
